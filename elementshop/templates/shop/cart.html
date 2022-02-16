@@ -1,0 +1,17 @@
+{% extends "common/base.html" %}
+
+
+{% block main %}
+
+{% for cart in carts %}
+<div class="border">
+    <div>商品名:{{ cart.product.name }}</div>
+    <div>価格:{{ cart.product.price }}</div>
+
+    <div>数量:{{ cart.amount }}</div>
+</div>
+{% endfor %}
+
+
+{% endblock %}
+

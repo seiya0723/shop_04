@@ -1,0 +1,169 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block extra_head %}
+
+<script src="{% static 'shop/js/script.js' %}"></script>
+<script src="{% static 'shop/js/slider.js' %}"></script>
+{% endblock %}
+
+
+{% block main %}
+
+<main class="container">
+
+    <form id="form_area" action="" method="POST" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <select name="category">
+            {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+    
+        <input class="form-control" type="text" name="name" value="test">
+        <textarea class="form-control" name="description">test</textarea>
+        <input class="form-control" type="number" name="price" value="100">
+    
+        {# <input class="add_image" type="button" value="追加"> #}
+        <div id="image_area">
+            <input class="input_image" type="file" name="image">
+        </div>
+    
+        <input id="submit" class="form-control" type="button" value="送信">
+    </form>
+    
+    {% for product in products %}
+    <div class="border">
+        <div>{{ product.name }}</div>
+        <div>{{ product.dt }}</div>
+    
+        <div>{{ product.price }}</div>
+    
+        {% for p in product.images %}
+        <div>
+            <img style="max-width:100%;" src="{{ p.image.url }}" alt="">
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+
+
+    <div class="preview_control_area">
+        <div class="control_button previous_button">prev</div>
+        <div class="data_preview_area">
+            {% for product in products %}
+            <div class="data_preview_frame">
+                <div class="data_preview_content">
+                    {# ここで、商品画像を1つだけ表示させるメソッドをモデルクラスに定義しておき、表示させる。 #}
+                    <div><img src="" alt="商品画像"></div>
+                    <div>{{ product.name }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="control_button next_button">next</div>
+    </div>
+
+    <div class="preview_control_area">
+        <div class="control_button previous_button">prev</div>
+        <div class="data_preview_area">
+            {% for product in products %}
+            <div class="data_preview_frame">
+                <div class="data_preview_content">
+                    {# ここで、商品画像を1つだけ表示させるメソッドをモデルクラスに定義しておき、表示させる。 #}
+                    <div><img src="" alt="商品画像"></div>
+                    <div>{{ product.name }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="control_button next_button">next</div>
+    </div>
+    <div class="preview_control_area">
+        <div class="control_button previous_button">prev</div>
+        <div class="data_preview_area">
+            {% for product in products %}
+            <div class="data_preview_frame">
+                <div class="data_preview_content">
+                    {# ここで、商品画像を1つだけ表示させるメソッドをモデルクラスに定義しておき、表示させる。 #}
+                    <div><img src="" alt="商品画像"></div>
+                    <div>{{ product.name }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="control_button next_button">next</div>
+    </div>
+    <div class="preview_control_area">
+        <div class="control_button previous_button">prev</div>
+        <div class="data_preview_area">
+            {% for product in products %}
+            <div class="data_preview_frame">
+                <div class="data_preview_content">
+                    {# ここで、商品画像を1つだけ表示させるメソッドをモデルクラスに定義しておき、表示させる。 #}
+                    <div><img src="" alt="商品画像"></div>
+                    <div>{{ product.name }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="control_button next_button">next</div>
+    </div>
+    <div class="preview_control_area">
+        <div class="control_button previous_button">prev</div>
+        <div class="data_preview_area">
+            {% for product in products %}
+            <div class="data_preview_frame">
+                <div class="data_preview_content">
+                    {# ここで、商品画像を1つだけ表示させるメソッドをモデルクラスに定義しておき、表示させる。 #}
+                    <div><img src="" alt="商品画像"></div>
+                    <div>{{ product.name }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="control_button next_button">next</div>
+    </div>
+    <div class="preview_control_area">
+        <div class="control_button previous_button">prev</div>
+        <div class="data_preview_area">
+            {% for product in products %}
+            <div class="data_preview_frame">
+                <div class="data_preview_content">
+                    {# ここで、商品画像を1つだけ表示させるメソッドをモデルクラスに定義しておき、表示させる。 #}
+                    <div><img src="" alt="商品画像"></div>
+                    <div>{{ product.name }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="control_button next_button">next</div>
+    </div>
+    <div class="preview_control_area">
+        <div class="control_button previous_button">prev</div>
+        <div class="data_preview_area">
+            {% for product in products %}
+            <div class="data_preview_frame">
+                <div class="data_preview_content">
+                    {# ここで、商品画像を1つだけ表示させるメソッドをモデルクラスに定義しておき、表示させる。 #}
+                    <div><img src="" alt="商品画像"></div>
+                    <div>{{ product.name }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="control_button next_button">next</div>
+    </div>
+
+
+</main>
+
+
+
+
+
+
+
+
+{% endblock %}
+
